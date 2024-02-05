@@ -1,7 +1,22 @@
 <html>
 <body>
-    <textarea id=""myTextArea" row="4" cols="40">
+    <textarea id="myTextArea" row="4" cols="40">
     </textarea>
-</body>
+    <button id="showTextButton">Show Text</button>
+    <button id="addTextButton">Add Text</button>
 
+
+</body>
+<script>
+    textarea = document.getElementById("myTextArea");
+    showTextButton = document.getElementById("showTextButton");
+    showTextButton.addEventListener("click", function(){
+        alert(textarea.value);
+    });
+    addTextButton = document.getElementById("addTextButton");
+    addTextButton.addEventListener("click", function(){
+        textarea.value += "...some more text"
+    });
+    
+</script>
 </html>
