@@ -4,6 +4,9 @@
     </textarea>
     <button id="showTextButton">Show Text</button>
     <button id="addTextButton">Add Text</button>
+    <button id="saveNotesButton">Save Text</button>
+    <button id="getNotesButton">Load Text</button>
+
 
 
 </body>
@@ -17,6 +20,19 @@
     addTextButton.addEventListener("click", function(){
         textarea.value += "...some more text"
     });
-    
+    saveNotesButton = document.getElementById("saveNotesButton");
+    saveNotesButton.addEventListener("click", function(){
+        notes = textarea.value;
+        localStorage.setItem("notes", notes);
+    });
+    getNotesButton = document.getElementById("getNotesButton");
+    getNotesButton.addEventListener("click", function(){
+        localStorage.getItem("notes", notes);
+        textarea.value +=notes;
+    });
+    window.addEventListener("load", function(){
+        storedNotes = localStorage.getItem("notes", notes);
+        if (storedNotes){text.area+=value};
+    })
 </script>
 </html>
