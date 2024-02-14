@@ -1,0 +1,35 @@
+<html>
+    
+<body>
+    hello
+    <textarea id="area" rows="4" cols="40"></textarea>
+    <table id="moviesTable" border="1">
+        <thead>
+            <tr>
+                <th>Title</th>
+
+            </tr>
+        </thead>
+
+    </table>
+    <script>
+        window.onload = function() {
+        textarea= document.getElementById("area")
+        textarea.value = "Some value"
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET')
+        xhr.onreadystatechange = function(event){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                textarea.value = movies[0]["title"]
+                var movies = JSON.parse(xhr.responseText);
+            }
+            var tableBody = document.getElementById("moviesTable");
+        textarea.value = "Working on it"
+
+        }
+        xhr.send();
+        }
+    </script>
+</body>
+
+</html>
