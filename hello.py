@@ -27,7 +27,16 @@ def get_data():
         ("name:Gabe", "type:colossal")
     ]
     return jsonify(data);
-
+@app.route("/api/status")
+def get_status():
+    data = [
+        ("name:Freddy", "type:bear"),
+        ("name:Bonnie", "type:bunny"),
+        ("name:Chica", "type:kitchen"),
+        ("name:Foxy", "type:pirate"),
+        ("name:Gabe", "type:colossal")
+    ]
+    return jsonify(data)
 @app.route("/<path:path>")
 def serve_static(path):
     return send_from_directory('.',path)
