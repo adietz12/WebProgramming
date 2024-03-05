@@ -9,7 +9,7 @@ body {
   margin:auto;
 }
 
-#container {
+.container {
     text-align: center;
   border-style:solid;
   border-color:lightblue;
@@ -17,7 +17,7 @@ body {
   background-color:lightblue;
   }
   
-#navbar {
+.navbar {
   text-align: center;
   border-style:solid;
   border-color:lightblue;
